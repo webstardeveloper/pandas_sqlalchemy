@@ -1,31 +1,51 @@
 <!DOCTYPE html>
+
+{% load staticfiles %}
+
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>	
 <body>
-	<div>
-		<input type="file" id="fileInput">
-		<pre id="fileDisplayArea"></pre>
+    <div class="row"  style="margin: 0px;">
+	<div class="col-sm-3" style="background-color: #181818; height: 99vh;">
+		<select>
+			<option>Artist</option>
+			{% for artist in artists %}
+			<option value="{{artist}}">{{artist}}</option>
+			{% endfor %}
+		</select>
 	</div>
 
-	<div id="container">
-
+	<div class="col-sm-9">
+		<div class="row">
+			<div class="col-sm-9"></div>
+			<div class="col-sm-3">
+				<select class="country">
+					<option>Country</option>
+					{% for country in countries %}
+					<option value="{{country}}">{{country}}</option>
+					{% endfor %}
+				</select>
+			</div>
+		</div>
 	</div>
+    </div>
 
 <script src="https://d3js.org/d3.v4.min.js"></script>
-<script src="chart.js"></script>
-<script src="player.js"></script>
+<script src="{% static 'js/chart.js' %}"></script>
+<script src="{% static 'js/player.js' %}"></script>
 <script>
 
 var audios = {}
 
 function play(key, obj){
-	if(obj.getAttribute("src") == 'images/play-button.png'){
+	if(obj.getAttribute("src") == "{% static 'images/play-button.png' %}"){
 		
 		var icons = document.getElementsByClassName("play-icon");
 		for(var i = 0; i < icons.length; i++)
-		   icons[i].setAttribute("src", "images/play-button.png")
+		   icons[i].setAttribute("src", "{% static 'images/play-button.png' %}")
 		   
 		for(key_tp in audios){
 			if(!audios[key_tp][4].paused){
@@ -41,7 +61,7 @@ function play(key, obj){
 			return
 		}
 		
-		obj.setAttribute("src", "images/pause-round-button.png")
+		obj.setAttribute("src", "{% static 'images/pause-round-button.png' %}")
 		
 		// audios[key][3].currentTime = 0
 		
@@ -64,7 +84,7 @@ function play(key, obj){
 		}
 		
 	} else {
-		obj.setAttribute("src", "images/play-button.png")
+		obj.setAttribute("src", "{% static 'images/play-button.png' %}")
 		audios[key][0].transition()
 		audios[key][1].transition()
 		audios[key][4].pause()
@@ -89,7 +109,7 @@ window.onload = function() {
 			for (var key in data){
 				if(key == 'undefined') continue;
 					document.getElementById('container').innerHTML += '<div class="audio" style="margin: 50px 30px" id="'+key+'"> \
-										<img src="images/play-button.png" class="play-icon" onclick="play(\''+key+'\', this)"/> \
+										<img src=\'{% static "images/play-button.png" %}\' class="play-icon" onclick="play(\''+key+'\', this)"/> \
 										<h3 style="margin-right: 20px;">' + key + '</h3> \
 										<svg class="chart-' + key + '" width="960" height="150"></svg> \
 									</div>';	

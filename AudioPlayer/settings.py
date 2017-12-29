@@ -123,4 +123,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
+STATICFILES_DIRS = [BASE_DIR + '/static/', ]
 STATIC_URL = '/static/'
+
+COUNTRY = [u'A1', u'AD', u'AE', u'AF', u'AG', u'AI', u'AL', u'AM', u'AO', u'AP', u'AR', u'AT', u'AU', u'AW', u'AZ', u'BA', u'BB', u'BD', u'BE', u'BF', u'BG', u'BH', u'BI', u'BJ', u'BN', u'BO', u'BQ', u'BR', u'BS', u'BT', u'BW', u'BY', u'BZ', u'CA', u'CD', u'CF', u'CG', u'CH', u'CI', u'CL', u'CM', u'CN', u'CO', u'CR', u'CV', u'CW', u'CY', u'CZ', u'DE', u'DJ', u'DK', u'DM', u'DO', u'DZ', u'EC', u'EE', u'EG', u'ER', u'ES', u'ET', u'EU', u'FI', u'FJ', u'FM', u'FR', u'GA', u'GB', u'GD', u'GE', u'GF', u'GH', u'GM', u'GN', u'GP', u'GQ', u'GR', u'GT', u'GW', u'GY', u'HK', u'HN', u'HR', u'HT', u'HU', u'ID', u'IE', u'IL', u'IN', u'IO', u'IQ', u'IR', u'IS', u'IT', u'JM', u'JO', u'JP', u'KE', u'KG', u'KH', u'KI', u'KM', u'KN', u'KR', u'KW', u'KY', u'KZ', u'LA', u'LB', u'LC', u'LI', u'LK', u'LR', u'LS', u'LT', u'LU', u'LV', u'LY', u'MA', u'MC', u'MD', u'ME', u'MF', u'MG', u'MH', u'MK', u'ML', u'MM', u'MN', u'MO', u'MQ', u'MR', u'MS', u'MT', u'MU', u'MV', u'MW', u'MX', u'MY', u'MZ', u'NE', u'NG', u'NI', u'NL', u'NO', u'NP', u'NR', u'NZ', u'OM', u'PA', u'PE', u'PG', u'PH', u'PK', u'PL', u'PS', u'PT', u'PW', u'PY', u'QA', u'RO', u'RS', u'RU', u'RW', u'SA', u'SB', u'SC', u'SD', u'SE', u'SG', u'SI', u'SK', u'SL', u'SM', u'SN', u'SO', u'SR', u'SS', u'ST', u'SV', u'SX', u'SZ', u'TC', u'TD', u'TG', u'TH', u'TJ', u'TL', u'TM', u'TN', u'TO', u'TR', u'TT', u'TW', u'TZ', u'UA', u'UG', u'US', u'UY', u'UZ', u'VA', u'VC', u'VE', u'VG', u'VN', u'VU', u'WS', u'YE', u'ZA', u'ZM', u'ZW', u'ZZ']
+
+
